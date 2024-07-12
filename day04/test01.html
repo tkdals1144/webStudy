@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 100px;
+        }
+        .box1 {
+            background-color: yellowgreen;
+            /* display: inline-block; 은 가로배치시 기본 마진, 패딩을 가지고 있지만 .left로 배치하면 가로로 배치될 때ㅐ 요소에
+            기본 마진, 패딩 없이 없다. */
+            float: left; /* 왼쪽으로 플로팅 */
+        }
+        .box2 {
+            background-color: aliceblue;
+            float: right; /* 오른쪽으로 플로팅 */
+        }
+        .box3 {
+            background-color: pink;
+        }
+        .box4 {
+            background-color: purple;
+            clear: both; /* 플로팅 양쪽 해제 */
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <div class="box1">박스1</div>
+    <div class="box2">박스2</div>
+    <div class="box3">박스3</div>
+    <div class="box4">박스4</div>
+</body>
+</html>

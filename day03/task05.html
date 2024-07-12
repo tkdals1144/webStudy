@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 311px;
+        }
+        img {
+            width: 311px;
+            height: 441px;
+        }
+        #card1_hover, #card2_hover {
+            display: none;
+        }
+        #div1:hover #card1 {
+            display: none;
+        }
+        #div1:hover #card1_hover {
+            display: block;
+        }
+        #div2:hover #card2 {
+            display: none;
+        }
+        #div2:hover #card2_hover {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <img id="card1" src="../images/back.png" alt="이미지손상">
+        <img id="card1_hover" src="../images/spade-A.png" alt="이미지손상">
+    </div>
+    <br>
+    <div id="div2">
+        <img id="card2" src="../images/back.png" alt="이미지손상">
+        <img id="card2_hover" src="../images/spade-2.png" alt="이미지손상">
+    </div>
+</body>
+</html>

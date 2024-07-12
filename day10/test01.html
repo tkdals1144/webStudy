@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모기능</title>
+</head>
+<body>
+    <div id="container">
+        <h1>할 일 목록</h1>
+        <p> 해야할 일들을 기록하기. </p>
+        <form>
+            <input type="text" id="item" autofocus>
+            <button id="add" class="addBtn">추가하기</button>
+        </form>
+        <div id="itemList"></div>
+    </div>
+    <script>
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+        })
+        let itemList = [];
+        let addBtn = document.querySelector("#add");
+
+        addBtn.addEventListener("click", addList);
+
+        function addList() {
+            let item = document.querySelector("#item").value;
+            console.log(item);
+            if (item != null) {
+                // itemList.push(item);
+                itemList.unshift(item);
+                // showList();
+            }
+            localStorage.setItem("storageList", JSON.stringify(itemList));
+            getItems();
+        }
+        function showList() {
+            let list = "<ul>";
+            for (let i = 0; i < itemList.length; i++) {
+                list += "<li>" + itemList[i] + "</li>";
+            }
+            list += "</ul>";
+            document.querySelector("#itemList").innerHTML = list;
+        }
+        function getItems() {
+            let storedDate = localStorage.getItem("storageList");
+            if (storedDate != null) itemList = JSON.parse(storedDate);
+            showList();
+        }
+    </script>
+</body>
+</html>

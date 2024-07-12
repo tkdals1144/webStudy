@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    * {
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        margin: 0;
+        padding: 0;
+    }
+    nav {
+        margin: 20px 0 0 20px;
+        display: flex;
+    }
+    li {
+        list-style: none;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        background-color: aliceblue;
+        cursor: pointer;
+    }
+    .content1, .content2, .content3 {
+        display: none;
+        margin-top: 5px;
+    }
+    .content1 li, .content2 li, .content3 li{
+        background-color: rgb(241, 248, 207);
+    }
+    nav:hover li ul {
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <li class="list1">드롭다운1
+            <ul class="content1">
+                <li>서브메뉴1</li>
+                <li>서브메뉴2</li>
+                <li>서브메뉴3</li>
+            </ul>
+        </li>
+        <li class="list2">드롭다운2
+            <ul class="content2">
+                <li>서브메뉴4</li>
+                <li>서브메뉴5</li>
+                <li>서브메뉴6</li>
+            </ul>
+        </li>
+        <li class="list3">드롭다운3
+            <ul class="content3">
+                <li>서브메뉴7</li>
+                <li>서브메뉴8</li>
+                <li>서브메뉴9</li>
+            </ul>
+        </li>
+    </nav>
+</body>
+</html>

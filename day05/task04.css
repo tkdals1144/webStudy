@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+* {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    height: 1400px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(221, 230, 238);
+}
+header {
+    margin: 0 auto;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgb(230, 226, 222);
+    position: sticky;
+    top: 0px;
+    background-color: white;
+}
+.nav_wrap {
+    margin-left: 180px;
+}
+.nav1, .nav2, .nav2_ul {
+    display: flex;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+.nav1 {
+    margin: 16px 0 12px 150px;
+    display: flex;
+    justify-content: right;
+}
+.nav1_anchor {
+    margin: 0 18px;
+    font-weight: 400;
+}
+.nav1_button {
+    margin: 0 5px;
+    background-color: white;
+    border: 0.5px solid rgb(216, 213, 210);
+    padding: 4px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.nav2 {
+    margin-left: 0px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.nav2_list {
+    margin: 0 45px;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+}
+.nav2_img {
+    width: 30px;
+    height: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+.main {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 300;
+    margin: 90px 0 0 0;
+    color: rgb(40, 62, 80);
+}
+.main_bold {
+    font-weight: 500;
+}
+section {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 350px 0px 350px;
+    cursor: pointer;
+}
+.content {
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px 40px 30px 40px;
+    margin: 25px 15px 0 15px;
+    transition: box-shadow 1s ease;
+}
+.content:hover {
+    height: 440px;
+    margin: 0px 15px;
+    box-shadow: 0 25px 35px rgba(10, 10, 10, 0.6);
+}
+.content_title {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 0 0 0;
+}
+.content_paragraph1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(22, 22, 22, 0.664);
+    margin: 10px 0;
+}
+.content_paragraph2 {
+    font-size: 19px;
+    font-weight: 500;
+    color: rgb(0, 130, 182);
+    margin: 0;
+}
+.content_main {
+    font-size: 35px;
+    font-weight: 500;
+    margin: 9px 0;
+    color: rgb(0, 130, 182);
+    line-height: 120%;
+}
+.content_main_bold {
+    font-size: 45px;
+    font-weight: bold;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            margin: 0;
+            background: url(../images/image01.jpg) no-repeat;
+            background-size: cover;
+            height: 900px;
+            width: 100%;
+            animation: moveSec 1s ease-in-out;
+        }
+        .firPart span {
+            color: aliceblue;
+            font-size: 50px;
+            position: absolute;
+            top: 52%;
+            right: 5%;
+            animation: moveIn 2s ease-out forwards;
+            visibility: hidden;
+            animation-delay: 1s;
+        }
+        .firPart p {
+            color: aliceblue;
+            font-size: 40px;
+            position: absolute;
+            top: 55%;
+            /* right: 5%; */
+            /* animation fill-mode : forwards -> 애니메이션 종료상태 유지 */
+            animation: moveP 2s ease-in-out forwards;
+            visibility: hidden;
+            animation-delay: 3s;
+        }
+        .secPart {
+            color: aliceblue;
+            font-size: 28px;
+            position: absolute;
+            top: 65%;
+            animation: movePre 1.5s ease-in-out forwards;
+            visibility: hidden;
+            animation-delay: 5s;
+        }
+
+        @keyframes moveSec {
+            from {
+                transform: translate(-200px, 0);
+            }to {
+                transform: translate(0, 0);
+            }
+        }
+
+        @keyframes moveIn {
+            from {
+                right: -10%;
+                opacity: 0;
+                visibility: visible;
+            }to {
+                right: 5%;
+                opacity: 0.8;
+                visibility: visible;
+            }
+        }
+        @keyframes moveP {
+            from {
+                right: -10%;
+                opacity: 0;
+                visibility: visible;
+            }to {
+                right: 5%;
+                opacity: 0.8;
+                visibility: visible;
+            }
+        }
+        @keyframes movePre {
+            from {
+                right: -15%;
+                opacity: 0;
+                visibility: visible;
+            }to {
+                right: 5%;
+                opacity: 0.8;
+                visibility: visible;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="firPart">
+            <span> pour un logiciel CRM, </span> <br>
+            <p>
+                simple, complet intuitif
+            </p>
+        </div>
+
+        <pre class="secPart">
+            CRM 소프트웨어를 선택하고,
+            간단하고 완전하며
+            직관적인
+        </pre>
+    </section>
+</body>
+</html>

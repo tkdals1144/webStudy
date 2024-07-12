@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>변수 선언, 전역/지역/블록 변수</h1>
+    <hr>
+    <p id="p1"></p>
+    <script>
+        let x;
+        function f() {
+            let y;
+            x = 10;
+            y = 20;
+            z = 30;
+            if (y == 20) {
+                let b = 40;
+                b++;
+                document.querySelector("#p1").innerHTML = `if 블록 내 블록변수 b = ${b} <br>`;
+            }
+            document.querySelector("#p1").innerHTML += `함수내 지역변수 y = ${y} <br>`;
+        }
+        f();
+        document.querySelector("#p1").innerHTML += `전역변수 x = ${x} <br>`;
+        document.querySelector("#p1").innerHTML += `전역변수 z = ${z}`;
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: 500px;
+        }
+
+        .div1 {
+            display: flex;
+            justify-content: center;
+        }
+        
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            margin: 0 70px 0 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <div class="div1">
+                <h2>오늘 먹을 점심 고르기</h2>
+            </div> <hr> <br>
+            <div class="div1">
+                <ul>
+                    <li>
+                        <label for="food1">
+                            <input type="radio" id="food1" name="food"> 짜장면
+                            <img src="https://t3.ftcdn.net/jpg/01/28/56/60/360_F_128566079_DhGPIivGHt0njqsGlKbjWylAxAvoO7yR.jpg" alt="이미지손상">
+                        </label>
+                    </li>
+                    <li>
+                        <label for="food2">
+                            <input type="radio" id="food2"  name="food"> 볶음밥
+                            <img src="https://recipe1.ezmember.co.kr/cache/recipe/2015/08/27/932b0eac49b0f341ee9b91553d84d9b91.jpg" alt="이미지손상" id="food2">
+                        </label>
+                    </li>
+                    <li>
+                        <label for="food3">
+                            <input type="radio" id="food3" name="food"> 비빔밥
+                            <img src="https://www.chuksannews.co.kr/data/photos/20210414/art_16177684990221_d040c6.jpg" alt="이미지손상" id="food3">
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </fieldset> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

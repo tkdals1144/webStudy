@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #score {
+            background-color: green;
+            color: white;
+        }
+        section {
+            width: 500px;
+            margin: 50px auto;
+            border: 1px solid black;
+            border-radius: 6px;
+            padding: 5px 20px;
+        }
+        button {
+            background-color: rgb(138, 138, 138);
+            border: 0.5px solid rgb(184, 184, 172);
+            border-radius: 5px;
+            padding: 3px 20px;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+        input {
+            background-color: rgb(255, 248, 239);
+            border: 0.5px solid rgb(184, 184, 172);
+            width: 200px;
+            border-radius: 5px;
+            padding: 3px 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <section id="section">
+        <p>국어, 수학, 영어 점수를
+            입력받아 평균 점수를 나타내세요.
+        </p>
+        <hr>
+        <p>국어점수 입력 : <input type="number" id="kor" min="0" max="100"></p>
+        <p>수학점수 입력 : <input type="number" id="mat" min="0" max="100"></p>
+        <p>영어점수 입력 : <input type="number" id="eng" min="0" max="100"></p>
+        <button onclick="calc()">확인</button>
+        <h1 id="warning"></h1>
+        <h3 id="score"></h3>
+        <h3 id="final"></h3>
+    </section>
+    <script>
+        function calc() {
+            let kor = parseInt(document.getElementById("kor").value);
+            let mat = parseInt(document.getElementById("mat").value);
+            let eng = parseInt(document.getElementById("eng").value);
+            let section = document.querySelector("#section");
+            let message = document.getElementById("warning");
+
+            if (kor > 100 || mat > 100 || eng > 100 || kor < 0 || mat < 0 || eng < 0) {
+                message.innerText = "완전히 잘못된 입력입니다.";
+                message.style.color = "red";
+                return 0;
+            } else {
+                message.innerText = "";
+            }
+
+            let score = (kor + mat + eng) / 3;
+
+            let final = "None"
+            document.getElementById("score").innerHTML = `평균 점수는? ${score.toFixed(2)}점 입니다.`;
+
+            if (score >= 90) final = "A"
+            else if (score >= 80) final = "B"
+            else if (score >= 70) final = "C"
+            else final = "F"
+
+            document.getElementById("final").innerHTML = `당신의 최종 성적은 ${final} 입니다.`;
+
+            let mes = document.createElement("h3");
+
+            if (final === "A") {
+                mes.innerText = "축! 합격입니다!!";
+                mes.style.backgroundColor = "blue";
+                mes.style.color = "white";
+            }
+            else if (final === "B" || final === "C" || final ==="F") {
+                mes.innerText = "아쉽지만 재시험 대상입니다.";
+                mes.style.backgroundColor = "yellow";
+                mes.style.color = "Red";
+            }
+            else mes.innerText = "오류 발생";
+
+            section.appendChild(mes);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인가 계산기</title>
+</head>
+<body>
+    <div class="contents">
+        <form>
+            <ul>
+                <li>
+                    <label for="oPrice">원래 가격
+                    <input type="text" id="oPrice">원</label>
+                </li>
+                <li> 
+                    <label for="rate">할인율
+                        <input type="text" id="rate"> %
+                    </label>
+                </li>
+                <button onclick="showPrice()">할인 가격 계산하기</button>
+            </ul>
+        </form>
+    </div>
+    <div class="showResult">0</div>
+
+    <script>
+        function showPrice() {
+            event.preventDefault(); // 새로고침 방지
+            let originPrice = parseInt(document.querySelector("#oPrice").value);
+            let rate = parseInt(document.querySelector("#rate").value);
+
+            originPrice -= (originPrice * rate / 100);
+            document.querySelector(".showResult").innerHTML = originPrice;
+        }
+    </script>
+</body>
+</html>

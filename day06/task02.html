@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        h3 {
+            animation: ani 3s ease-in-out infinite alternate;
+        }
+        @keyframes ani {
+            from {font-size: 500%;}
+            to {font-size: 100%;}
+        }
+        hr {
+            width: 500px;
+        }
+        div {
+            display: flex;
+            justify-content: center;
+        }
+        p {
+            width: 300px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h3>꽝!</h3>
+    </section>
+    <hr>
+    <div>
+        <p>꽝! 하는 단어가 커졌다 줄어들었다 반복하도록 alternate 속성을 추가했습니다.</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            text-align: center;
+            margin-top: 200px;
+        }
+        img {
+            width: 250px;
+            height: 350px;
+        }
+        #img1 {
+            display: inline;
+        }
+        #img2 {
+            display: none;
+        }
+        #img1.active {
+            display: none;
+        }
+        #img2.active {
+            display: inline;
+        }
+        #toggle {
+            width: 100px;
+            height: 30px;
+            background-color: rgb(126, 194, 253);
+            color: white;
+            font-weight: bold;
+            border: 0.8px solid rgb(160, 145, 145);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <img src="../images/noactive.jpg" alt="" id="img1">
+        <img src="../images/active.png" alt="" id="img2"> <br>
+        <input type="button" id="toggle" value="비활성화">
+    </section>
+    <script>
+        let $img1 = document.querySelector("#img1");
+        let $img2 = document.querySelector("#img2");
+        let $toggle = document.querySelector("#toggle");
+
+        $toggle.addEventListener("click", () => {
+            $img1.classList.toggle("active");
+            $img2.classList.toggle("active");
+            if ($toggle.value == "활성화") {
+                $toggle.value = "비활성화";
+                $toggle.style.backgroundColor = "";
+                $toggle.style.color = "";
+            } else {
+                $toggle.value = "활성화";
+                $toggle.style.backgroundColor = "rgb(232, 248, 85)";
+                $toggle.style.color = "rgb(114, 89, 89)";
+            }
+        })
+    </script>
+</body>
+</html>

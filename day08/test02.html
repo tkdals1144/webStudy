@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: palegoldenrod;
+            margin: 100px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p id="text"></p>
+    </div>
+
+    <script>
+        const $box = document.querySelector("#box");
+        const $p = document.querySelector("#text");
+        // 마우스 올리면
+        // $box.addEventListener("mouseenter", () => {
+        //     $box.style.backgroundColor = "orange";
+        // })
+
+        // 마우스 벗어나면
+        $box.addEventListener("mouseleave", () => {
+            $box.style.backgroundColor = "palegoldenrod";
+            $box.style.width = "150px";
+            $box.style.height = "150px";
+            $p.innerText = "mouseleave";
+            $p.style.color = "black";
+        })
+
+        // 마우스 올리면
+        $box.addEventListener("mouseover", () => {
+            $box.style.backgroundColor = "blue";
+            $box.style.width = "200px";
+            $box.style.height = "200px";
+            $p.innerText = "mouseover";
+            $p.style.color = "white";
+        })
+
+        // 클릭상태 유지시
+        $box.addEventListener("mousedown", () => {
+            $box.style.backgroundColor = "green";
+            $p.innerText = "mousedown";
+        })
+
+        // 클릭을 떼면
+        $box.addEventListener("mouseup", () => {
+            $box.style.backgroundColor = "red";
+            $p.innerText = "mouseup";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>구구단 출력 함수 만들기</h1>
+    <hr>
+    <p></p>
+    <script>
+        let p = document.querySelector("p");
+        function calc(num) {
+            if (num < 1 || num > 9) {
+                alert("잘못된 입력값입니다.")
+                return 0;
+            }
+            for(let i = 1; i <= 9; i++) {
+                p.innerHTML += (`${num} x ${i} = ` + num*i + `<br>`);
+            }
+        }
+        let num = parseInt(prompt("원하는 구구단의 단수를 입력하십시오"));
+        calc(num);
+    </script>
+</body>
+</html>

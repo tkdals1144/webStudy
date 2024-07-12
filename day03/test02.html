@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            border: solid 1px brown;
+            margin: 50px auto;
+        }
+
+        #span1 {
+            background-color: brown;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        #p1 {
+            font-weight: bold;
+        }
+
+        #span2 {
+            text-decoration: underline;
+        }
+
+        .pclass {
+            margin: 0;
+        }
+
+        #span3 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span id="span1">[날씨] 내일 아침 쌀쌀,</span>
+        <p id="p1">한낮 <span id="span2">포근</span>... 내륙 짙은 안개</p>
+        <p class="pclass">오늘도 쌀쌀했던 아침과 달리, 낮에는 꽤나 따듯했는데요.</p>
+        <p class="pclass">해가 지고 기온이 빠르게 떨어지고 있습니다.</p>
+        <p class="pclass">이렇게 <span id="span3">15도 안팎으로</span> 크게 나는 일교차에 건강</p>
+    </div>
+</body>
+</html>

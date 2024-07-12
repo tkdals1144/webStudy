@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알림메시지</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        button {
+            background-color: greenyellow;
+            font-weight: bold;
+            border: 5px dashed green;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 3px gray;
+            cursor: pointer;
+        }
+        #note-box {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="note-box"></div>
+    <button id="btn">알림 <br> 메세지! </button>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        const noteBox = document.querySelector("#note-box");
+        let i = 0;
+        let sum = 1;
+
+        btn.addEventListener("click", () => {
+            const note = document.createElement("div");
+            note.classList.add("note");
+            note.innerText = `팝업으로 띄울 내용 : ${sum}번째`;
+            note.style.backgroundColor = list[i];
+            note.style.margin = "10px";
+            noteBox.appendChild(note);
+
+            i++; sum++;
+            if (i == 3) i = 0;
+            
+            // 시간이 지나면 삭제되도록
+            setTimeout(() => {
+                note.remove();
+            }, 3000);
+        });
+
+        function greeting() {
+            console.log("안녕하세요.");
+        }
+
+        // 일정 시간마다 계속해서 함수를 실행
+        setInterval(greeting, 2000);
+
+        // setInterval를 멈추는 함수
+        clearInterval(greeting);
+
+        let list = ["lightcoral", "lightblue", "lightgreen"];
+    </script>
+</body>
+</html>

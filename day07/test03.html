@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #desc {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="item">
+        <button onclick="showDetails()" id="open">상세 설명 보기</button>
+        <div id="desc">
+            <h4>뉴진스</h4>
+            <p>
+                사진에 대한 내용 <br>
+                대중음악은 일상과 초근접해 있는 문화이기 때문에 마치 매일 입는 옷과 같다
+            </p>
+            <button onclick="hideDetail()" id="close">상세설명 닫기</button>
+        </div>
+    </div>
+    <script>
+        function showDetails() {
+            document.querySelector("#desc").style.display = "block";
+        }
+        function hideDetail() {
+            document.querySelector("#desc").style.display = "none";
+        }
+    </script>
+</body>
+</html>

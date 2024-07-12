@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("scroll").addEventListener("click", function(event) {
+                event.preventDefault();
+                window.scrollTo({
+                    top: 1400,
+                    left: 0,
+                    behavior:"smooth"
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="../images/logo.png" alt="이미지손상" class="logo"></a>
+        <div class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="scroll"><a href="#">project</a></li>
+                <li><a href="https://blog.naver.com/rioran">Blog</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="https://github.com/tkdals1144">Github</a></li>
+            </ul>
+        </div>
+        <div class="icons">
+            <ul>
+                <li><a href="#">아이콘</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="banner_wrap">
+            <div id="banner">
+                <ul id="banner_ul">
+                    <li class="banner_li">
+                        <div class="banner_img"><img src="../images/image01.jpg"><p class="banner_p">Life is full of ups and downs</p></div>
+                    </li>
+                    <li class="banner_li">
+                        <div class="banner_img"><img src="../images/image02.jpg"><p class="banner_p">Believe in yourself</p></div>
+                    </li>
+                    <li class="banner_li">
+                        <div class="banner_img"><img src="../images/image03.jpg"><p class="banner_p">Where there is a will there is a way</p><</div>
+                    </li>
+                    <li class="banner_li">
+                        <div class="banner_img"><img src="../images/image04.jpg"><p class="banner_p">We live, not as we wish, but as we can</p><</div>
+                    </li>
+                    <li class="banner_li">
+                        <div class="banner_img"><img src="../images/image05.jpg"><p class="banner_p">This too shall pass away</p><</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <h1 id="title">반갑습니다!</h1>
+        <p id="title2">오늘도 힘찬 하루를 위해 화이팅입니다!</p>
+        <h1 id="title3">제가 만든 페이지들입니다</h1>
+        <hr>
+        <section class="box_wrap">
+            <ul>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/study/"><div id="box1" class="box"><p class="box_p">page1</p></div></a>
+                </li>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/bluebottle/"><div id="box2" class="box"><p class="box_p">page2</p></div></a>
+                </li>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/practiceHTML/"><div id="box3" class="box"><p class="box_p">page3</p></div></a>
+                </li>
+            </ul>
+        </section>
+        <h1 id="title4">제가 공부한 내용들입니다</h1>
+        <hr>
+        <section class="box_wrap">
+            <ul>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/study/"><div id="box1" class="box"><p class="box_p">page1</p></div></a>
+                </li>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/bluebottle/"><div id="box2" class="box"><p class="box_p">page2</p></div></a>
+                </li>
+                <li class="box_list">
+                    <a href="https://tkdals1144.github.io/practiceHTML/"><div id="box3" class="box"><p class="box_p">page3</p></div></a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>여기는 푸터입니다</footer>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset {
+            width: 400px;
+        }
+        textarea {
+            width: 300px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <h2>회원정보 입력</h2>
+    <form action="">
+        <fieldset>
+            <legend>로그인 정보</legend>
+            <label for="id">
+                아이디 <input id="id" type="text">
+            </label> <br>
+            <label for="pwd">
+                비밀번호 <input id="pwd" type="password">
+            </label>
+            <input type="submit" value="로그인">
+        </fieldset>
+        <fieldset>
+            <legend>추가 정보</legend>
+            <label for="email">메일주소 : 
+                <input type="email" id="email">
+            </label> <br> <br>
+            <span>메일 수신</span>
+            <label for="email_1">
+                <input type="radio" id="email_1" name="email" value="e_1"> 메일 수신 거부
+            </label>
+            <label for="email_2">
+                <input type="radio" id="email_2" name="email" value="e_2"> 메일 수신 동의
+            </label> <br> <br>
+            <label for="tel">
+                연락처 : <input type="tel" id="tel" placeholder="하이폰을 빼고 입력해주세요">
+            </label> <br>
+            <label for="birth">
+                생년월일 : <input type="text" id="birth" maxlength="10" minlength="10" placeholder="YYYY-MM-DD">
+            </label> <br>
+            <p>취미 : 
+                <label for="hobby1">
+                    <input type="checkbox" id="hobby1"> 독서
+                </label>
+                <label for="hobby2">
+                    <input type="checkbox" id="hobby2"> 음악감상
+                </label>
+                <label for="hobby3">
+                    <input type="checkbox" id="hobby3"> 운동
+                </label>
+            </p> <br>
+            <label for="">가입 경로</label>
+            <select name="" id="">
+                <option value="value1">블로그</option>
+                <option value="value2">지인</option>
+                <option value="value3">전단지</option>
+                <option value="value4">그 외</option>
+            </select> <br> <br>
+            <label for="">메모</label>
+            <textarea name="" id="" placeholder="자유롭게 의견을 남겨주세요."></textarea>
+        </fieldset> <br>
+        <input type="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>a태그 링크 색상</title>
+    <style>
+        a:link { /* 방문하지 않은 링크 선택 */
+            color: gray;
+        }
+        a:visited { /* 한번이라도 방문한 링크 색상 */
+            color: blue;
+        }
+        a:hover { /* 마우스를 올렸을 때 */
+            color: red;
+        }
+        a:focus { /* 키를 눌러서 선택했을때 */
+            color: hotpink;
+        }
+        a:active { /* 클릭하고 있는 순간 */
+            color: rgb(4, 7, 8);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p><a href="https://pgtd.tistory.com/110">웹 기획</a></p>
+        <p><a href="https://cafe.naver.com/bigbluesky">웹 스토리보드</a></p>
+        <p><a href="https://www.naver.com/">웹 디자인</a></p>
+        <p><a href="#">웹 포트폴리오</a></p>
+        <p><a href="#">웹 구조</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #modal_box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(190, 187, 183, 0.486);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #modal_contents {
+            background-color: white;
+            width: 30%;
+            height: 70%;
+            text-align: center;
+        }
+        #modal_close_wrap {
+            text-align: right;
+        }
+        #modal_close {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 25px;
+            right: 25px;
+            cursor: pointer;
+        }
+        #modal_title {
+            margin: 0 0 15px 0;
+        }
+        #modal_img {
+            max-width: 60%;
+            max-height: 50%;
+            background-color: aliceblue;
+            border: 1px solid;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+        #file_input {
+            display: none;
+        }
+        #title {
+            text-align: center;
+        }
+        #drawer {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+        }
+        hr {
+            border: 1px solid rgb(170, 152, 152);
+        }
+        .hr1 {
+            width: 97%;
+        }
+        .hr2 {
+            width: 90%;
+        }
+        #menu {
+            position: absolute;
+            overflow: unset;
+            top: 1px;
+            right: -260px;
+            width: 250px;
+            height: 100%;
+            border: 1px solid black;
+            background-color: rgb(252, 223, 223);
+        }
+        @keyframes ani {
+            from {right: -260px;}
+            to {right: 0px;}
+        }
+        @keyframes ani2 {
+            from {right: 0px;}
+            to {right: -260px;}
+        }
+        #menu.active {
+            animation: ani 2s;
+            animation-fill-mode: forwards;
+        }
+        #menu.inactive {
+            animation: ani2 2s;
+            animation-fill-mode: forwards;
+        }
+        #menu_close {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            top: 5px;
+            left: 220px;
+            cursor: pointer;
+        }
+        #menu_plus {
+            text-align: center;
+            cursor: pointer;
+            margin: 0 0 15px 0
+        }
+        ul {
+            list-style: none;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        section {
+            display: flex;
+            padding: 40px;
+        }
+        #profile_wrap {
+            background-color: rgb(184, 205, 223);
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 25%;
+            height: 60%;
+            text-align: right;
+        }
+        #profile {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #profile_setting {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            top: 15px;
+            right: 15px;
+        }
+        #footer {
+            height: 500px;
+            background-color: rgb(71, 71, 71);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 id="title">MyPage</h2>
+        <img src="../images/menu.png" alt="None" id="drawer">
+        <hr class="hr1">
+        <nav id="menu">
+            <div id="menu_close_wrap">
+                <img src="../images/close02.png" alt="이미지손상" id="menu_close">
+            </div>
+            <h3 id="menu_plus">메뉴추가</h3>
+            <hr>
+            <ul id="menu_ul"></ul>
+        </nav>
+    </header>
+    <main>
+        <div id="modal_box">
+            <div id="modal_contents">
+                <div id="modal_close_wrap">
+                    <img src="../images/close02.png" alt="이미지손상" id="modal_close">
+                    <input type="file" id="file_input">
+                </div>
+                <h3 id="modal_title">프로필 설정</h3>
+                <hr class="hr2">
+                <img src="../images/user.png" alt="이미지손상" id="modal_img">
+                <label for="modal_name"><p id="modal_p1">이름 : <input type="text" id="modal_name"></p></label>
+                <label for="modal_addr"><p id="modal_p2">주소 : <input type="text" id="modal_addr"></p></label>
+            </div>
+        </div>
+        <section> <!-- flex -->
+            <div id="profile_wrap"> <!--크기만 설정-->
+                <img src="../images/setting.png" alt="None" id="profile_setting"> <!--absolute-->
+                <img src="../images/user.png" alt="None" id="profile"> <!--최대크기로-->
+            </div>
+            <article id="info">
+                <div id="name_wrap">이름 : <span id="name">홍길동</span></div>
+                <div id="addr_wrap">주소 : <span id="addr">홍길시 홍길동 어쩌구</span></div>
+                <div id="memo"></div>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div id="footer"></div>
+    </footer>
+    <script>
+        const $drawer = document.querySelector("#drawer");
+        const $menu = document.querySelector("#menu");
+        const $menuClose = document.querySelector("#menu_close");
+        const $menuPlus = document.querySelector("#menu_plus");
+        const $menuUl = document.querySelector("#menu_ul");
+        const $setting = document.querySelector("#profile_setting");
+        const $modalClose = document.querySelector("#modal_close");
+        const $modalImg = document.querySelector("modal_img");
+
+        $drawer.addEventListener("click", () => {
+            $menu.classList.add("active");
+            $menu.classList.remove("inactive");
+        });
+        $menuClose.addEventListener("click", () => {
+            $menu.classList.remove("active");
+            $menu.classList.add("inactive");
+        });
+        $menuPlus.addEventListener("click", () => {
+            if ($menuUl.querySelectorAll("li").length >= 12) {
+                alert("메뉴의 개수가 현재 최대입니다!");
+                return;
+            }
+            let prom = prompt("추가할 메뉴의 이름을 입력하세요");
+            if (prom || prom.trim() == "") {
+                alert("공백은 입력할 수 없습니다!");
+                return;
+            }
+            let list = document.createElement("li");
+            let hr = document.createElement("hr");
+            let textNode = document.createTextNode(prom);
+            list.appendChild(textNode);
+            $menuUl.appendChild(list);
+            $menuUl.appendChild(hr);
+        })
+        $setting.addEventListener("click", () => {
+
+        });
+        $modalClose.addEventListener("click", () => {
+            document.querySelector("#modal_box").style.display = "none";
+        });
+        $modalImg.addEventListener("click", () => {
+            document.querySelector("#file_input").click();
+        })
+    </script>
+</body>
+</html>

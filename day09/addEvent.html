@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="이미지없음" id="myImage">
+    <button id="onBtn">켜기</button>
+    <button id="offBtn">끄기</button>
+    <script>
+        let myImage = document.getElementById('myImage');
+        let onBtn = document.getElementById('onBtn');
+        let offBtn = document.getElementById('offBtn');
+
+        onBtn.addEventListener("click", changePic1);
+        offBtn.addEventListener("click", changePic2);
+
+        function changePic1() {
+            myImage.src = "../images/루피.jpg"
+        }
+        function changePic2() {
+            myImage.src = "../images/apple.jpg"
+        }
+    </script>
+</body>
+</html>

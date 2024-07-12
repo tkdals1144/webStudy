@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation basic</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: cadetblue;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            line-height: 200px;
+            margin: 50px auto;
+            /* 애니메이션 anima를 3초동안 alternate */
+            /* alternate : 왕복 */
+            /* infinite : 무한반복 */
+            /* ease ; 천천-빠름-천천 */
+            /* linear ; 등속 */
+            /* ease-in ; 천천-보통 */
+            /* ease-out ; 보통-천천 */
+            /* ease-in-out ; 천천-보통-천천 */
+            /* cubic-bezier ; 커스텀 */
+            /* steps ; 뚝뚝 끊어 보여준다 */
+            animation: anima 3s alternate infinite linear;
+        }
+        @keyframes anima {
+            from {
+                transform: translate(0, 0);
+            }to {
+                transform: translate(400px, 300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">animation</div>
+</body>
+</html>

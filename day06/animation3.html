@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        section {
+            border: dashed 10px black;
+            width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        li:nth-child(1) {
+            background: url(../images/image01.jpg);
+            background-size: cover;
+        }
+        li:nth-child(2) {
+            background: url(../images/image02.jpg);
+            background-size: cover;
+        }
+        li:nth-child(3) {
+            background: url(../images/image03.jpg);
+            background-size: cover;
+        }
+        li:nth-child(4) {
+            background: url(../images/image04.jpg);
+            background-size: cover;
+        }
+        li:nth-child(5) {
+            background: url(../images/image05.jpg);
+            background-size: cover;
+        }
+        ul {
+            width: 5000px;
+            height: 350px;
+            overflow: hidden; /* 사이즈가 넘어서는 부분을 가려준다 */
+            animation: slideAni 10s infinite ease-in-out;
+            position: relative;
+            display: flex;
+        }
+        li {
+            width: 1000px;
+            height: 350px;
+        }
+        @keyframes slideAni {
+            0% {left: 0;}
+            20% {left: -1000px;}
+            40% {left: -2000px;}
+            60% {left: -3000px;}
+            80% {left: -4000px;}
+            100% {left: 0;}
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </section>
+</body>
+</html>

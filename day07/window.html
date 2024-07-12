@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>팝업 내용</h2>
+
+    <p>팝업창
+    내용 <br>
+    팝업창 <br>
+    내용 <br>
+    </p>
+
+    <button onclick="fun()"></button>
+    <button onclick="window.close()">닫기</button>
+    <script>
+        let newWin = window.open("pop12.html", "pop", "width=300, height=200, left=100, top=200");
+
+        if (newWin == null) {
+            alert("팝업이 차단되어 있습니다. 해제해주세요.");
+        }
+
+        function fun() {
+            window.open("pop12.html", "pop", "width=300, height=200, left=100, top=200");
+        }
+        newWin.moveBy(100, 100);
+    </script>
+</body>
+</html>

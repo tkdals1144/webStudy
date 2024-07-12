@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 화살표 함수에만 쓸 수 있다.
+        // return문은 생략된 것으로 간주
+        // 매개변수가 없을때
+        const hi  = () => {
+            return "안녕하세요?";
+        }
+        console.log(hi());
+        const hi1 = () => "안녕하세요? 화살표2";
+        console.log(hi1());
+
+        // 매개변수가 1개일 때
+        let hi2 = function(user) {
+            let userName = prompt("이름을 입력하세요", "이");
+            document.write(userName + "님, 안녕하세요? <br>");
+        }
+
+        hi2();
+
+        let hi3 = user => document.write(user + "님, 안녕하세요? <br>");
+        
+        hi3("이상민");
+
+        // 매개변수가 2개일 때
+        let sum1 = function(a, b) {
+            return a + b;
+        }
+        console.log(sum1(2,3));
+
+        sum2 = (a, b) => a + b;
+        console.log(sum2(5,9));
+
+
+    </script>
+</body>
+</html>
