@@ -118,19 +118,20 @@ footer {
     font-size: 40px;
     padding-left: 180px;
 }
-.box_wrap {
+.page_box_wrap {
     padding: 30px 150px;
 }
-.box_wrap ul {
+.page_box_wrap ul {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
-.box_list:hover {
+.page_box_list:hover {
     background: none;
     transform: scale(1.2, 1.2);
     transition-duration: 1s;
 }
-.box {
+.page_box {
     width: 450px;
     height: 350px;
     background-color: white;
@@ -147,13 +148,58 @@ footer {
 #box3 {
     background-image: url(../images/page03.png);
 }
-.box_p {
+.page_box_p {
     position: relative;
     top: 280px;
     right: 50px;
     color: black;
     font-size: 28px;
 }
+.study_box_wrap {
+    padding: 30px 150px;
+}
+.study_box_wrap ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.study_box_list:hover {
+    background: none;
+    transform: scale(1.2, 1.2);
+    transition-duration: 1s;
+}
+.study_box {
+    width: 350px;
+    height: 250px;
+    background-color: white;
+    background-size: cover;
+    cursor: pointer;
+    text-align: right;
+}
+.study_box_p {
+    position: relative;
+    top: 10px;
+    right: 20px;
+    font-size: 22px;
+}
+#study_box1 {
+    background-image: url(../images/study01.png);
+}
+#study_box2 {
+    background-image: url(../images/study02.png);
+}
+#study_box3 {
+    background-image: url(../images/study03.png);
+}
+#study_box4 {
+    background-image: url(../images/study04.png);
+}
+#study_box5 {
+    background-image: url(../images/study05.png);
+}
+/* #study_box6 {
+    background-image: url(../images/study06.png);
+} */
 hr {
     margin: 5px auto;
     width: 84%;
