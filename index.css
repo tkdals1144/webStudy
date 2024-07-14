@@ -140,13 +140,13 @@ footer {
     text-align: right;
 }
 #box1 {
-    background-image: url(../images/page01.png);
+    background-image: url(images/page01.png);
 }
 #box2 {
-    background-image: url(../images/page02.png);
+    background-image: url(images/page02.png);
 }
 #box3 {
-    background-image: url(../images/page03.png);
+    background-image: url(images/page03.png);
 }
 .page_box_p {
     position: relative;
