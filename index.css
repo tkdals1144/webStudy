@@ -140,13 +140,13 @@ footer {
     text-align: right;
 }
 #box1 {
-    background-image: url(images/page01.png);
+    background-image: url(./images/page01.png);
 }
 #box2 {
-    background-image: url(images/page02.png);
+    background-image: url(./images/page02.png);
 }
 #box3 {
-    background-image: url(images/page03.png);
+    background-image: url(./images/page03.png);
 }
 .page_box_p {
     position: relative;
@@ -183,19 +183,19 @@ footer {
     font-size: 22px;
 }
 #study_box1 {
-    background-image: url(images/study01.png);
+    background-image: url(./images/study01.png);
 }
 #study_box2 {
-    background-image: url(images/study02.png);
+    background-image: url(./images/study02.png);
 }
 #study_box3 {
-    background-image: url(images/study03.png);
+    background-image: url(./images/study03.png);
 }
 #study_box4 {
-    background-image: url(images/study04.png);
+    background-image: url(./images/study04.png);
 }
 #study_box5 {
-    background-image: url(images/study05.png);
+    background-image: url(./images/study05.png);
 }
 /* #study_box6 {
     background-image: url(../images/study06.png);
