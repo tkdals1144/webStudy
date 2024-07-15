@@ -123,8 +123,10 @@ footer {
 }
 .page_box_wrap ul {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+}
+.page_box_list {
+    padding-right: 83px;
 }
 .page_box_list:hover {
     background: none;
@@ -160,12 +162,14 @@ footer {
 }
 .study_box_wrap ul {
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
+}
+.study_box_list {
+    padding: 10px 50px 10px 0;
 }
 .study_box_list:hover {
     background: none;
-    transform: scale(1.2, 1.2);
+    transform: scale(1.1, 1.1);
     transition-duration: 1s;
 }
 .study_box {
@@ -197,9 +201,9 @@ footer {
 #study_box5 {
     background-image: url(./images/study05.png);
 }
-/* #study_box6 {
+#study_box6 {
     background-image: url(../images/study06.png);
-} */
+}
 hr {
     margin: 5px auto;
     width: 84%;
