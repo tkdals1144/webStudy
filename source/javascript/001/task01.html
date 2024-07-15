@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            border: 1px solid black;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        h3 {
+            margin: auto 0;
+        }
+        #img_wrap {
+            display: flex;
+            justify-content: center;
+        }
+        p {
+            text-align: center;
+        }
+        .wrap2 {
+            margin: 0 20px;
+        }
+        #user_select_wrap {
+            display: flex;
+            justify-content: center;
+        }
+        .select_wrap {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 20px;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: rgba(0, 0, 0, 0.534);
+        }
+        hr {
+            margin: 20px 0;
+        }
+        .select_wrap:nth-child(1) {
+            background-image: url(../images/scissors.png);
+        }
+        .select_wrap:nth-child(2) {
+            background-image: url(../images/rock.png);
+        }
+        .select_wrap:nth-child(3) {
+            background-image: url(../images/paper.png);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="img_wrap">
+            <div class="wrap2">
+                <p>computer</p>
+                <img src="../images/paper.png" alt="" id="computer_img">
+            </div>
+            <h3>VS</h3>
+            <div class="wrap2">
+                <p>user</p>
+                <img src="../images/rock.png" alt="" id="user_img">
+            </div>
+        </div>
+        <hr>
+        <div id="user_select_wrap">
+            <!-- 1 -->
+            <div class="select_wrap" onclick="func1()">가위</div>
+            <!-- 2 -->
+            <div class="select_wrap" onclick="func2()">바위</div>
+            <!-- 3 -->
+            <div class="select_wrap" onclick="func3()">보</div>
+        </div>
+        <br>
+        <h1 id="result"></h1>
+    </div>
+    <script>
+        function func1() {
+            let random = Math.ceil(Math.random() * 3);
+            document.querySelector("#user_img").src = "../images/scissors.png";
+            switch (random) {
+                case 1:
+                    document.querySelector("#result").innerHTML = "비겼다!";
+                    document.querySelector("#computer_img").src = "../images/scissors.png";
+                    break;
+                case 2:
+                    document.querySelector("#result").innerHTML = "졌다!";
+                    document.querySelector("#computer_img").src = "../images/rock.png";
+                    break;
+                case 3:
+                    document.querySelector("#result").innerHTML = "이겼다!";
+                    document.querySelector("#computer_img").src = "../images/paper.png";
+                    break;
+            }
+        }
+        function func2() {
+            let random = Math.ceil(Math.random() * 3);
+            document.querySelector("#user_img").src = "../images/rock.png";
+            switch (random) {
+                case 1:
+                    document.querySelector("#result").innerHTML = "이겼다!";
+                    document.querySelector("#computer_img").src = "../images/scissors.png";
+                    break;
+                case 2:
+                    document.querySelector("#result").innerHTML = "비겼다!";
+                    document.querySelector("#computer_img").src = "../images/rock.png";
+                    break;
+                case 3:
+                    document.querySelector("#result").innerHTML = "졌다!";
+                    document.querySelector("#computer_img").src = "../images/paper.png";
+                    break;
+            }
+        }
+        function func3() {
+            let random = Math.ceil(Math.random() * 3);
+            document.querySelector("#user_img").src = "../images/paper.png";
+            switch (random) {
+                case 1:
+                    document.querySelector("#result").innerHTML = "졌다!";
+                    document.querySelector("#computer_img").src = "../images/scissors.png";
+                    break;
+                case 2:
+                    document.querySelector("#result").innerHTML = "이겼다!";
+                    document.querySelector("#computer_img").src = "../images/rock.png";
+                    break;
+                case 3:
+                    document.querySelector("#result").innerHTML = "비겼다!";
+                    document.querySelector("#computer_img").src = "../images/paper.png";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
