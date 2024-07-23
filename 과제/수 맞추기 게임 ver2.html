@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수 맞추게 게임</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Gamja Flower", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #wrap {
+            border: 1px solid;
+            margin: 100px auto;
+            width: 500px;
+            text-align: center;
+            background-color: rgb(245, 237, 226);
+        }
+        h2, #alarm {
+            padding: 10px 0;
+        }
+        #alarm {
+            color: salmon;
+        }
+        #number_wrap {
+            display: flex;
+            justify-content: center;
+        }
+        .number {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 10px;
+            background-color: red;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        button {
+            width: 300px;
+            height: 30px;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+        #pick_number {
+            margin-top: 10px;
+        }
+        #result {
+            font-size: 28px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h2>수 맞추기 게임 Ver2</h2>
+        <hr>
+        <!-- check를 통해 상태변환 -->
+        <h3 id="alarm">랜덤수를 배정해주세요</h3>
+        <div id="number_wrap">
+            <div class="number">0</div>
+            <div class="number">0</div>
+            <div class="number">0</div>
+        </div>
+        <button id="game_start">랜덤수 배정</button> <br>
+        <button id="pick_number">숫자뽑기</button> <br>
+        <div id="result">성공 or 실패?</div>
+    </div>
+    <script>
+        $alarm = document.querySelector("#alarm");
+        $numbers = document.querySelectorAll(".number");
+        $gameStart = document.querySelector("#game_start");
+        $pickNumber = document.querySelector("#pick_number");
+        $result = document.querySelector("#result");
+        let check = 0;
+        let randomNum = 0;
+        let numbers = [];
+
+        $gameStart.addEventListener("click", () => {
+            check = 1;
+            $alarm.innerHTML = "랜덤수가 배정되었습니다! (1 ~ 10)";
+            $numbers.forEach(number => {
+                number.style.backgroundColor = "red";
+                number.style.color = "white";
+                number.innerHTML = "0";
+            });
+            randomNum = Math.ceil(Math.random() * 10);
+        });
+
+        $pickNumber.addEventListener("click", () => {
+            if (check == 0) {
+                $alarm.innerHTML = "랜덤수를 먼저 배정해주세요";
+            } else if (check == 1) {
+                for (let i = 0; i < 3; i++) {
+                    numbers[i] = Math.ceil(Math.random() * 10);
+                    $numbers[i].innerHTML = numbers[i];
+                    if (numbers[i] == randomNum) {
+                        check = 2;
+                    }
+                }
+                if (check == 2) {
+                    $numbers.forEach(number => {
+                        number.style.backgroundColor = "skyblue";
+                        number.style.color = "salmon";
+                    });
+                    $alarm.innerHTML = "랜덤수가 이 안에 있습니다! 답을 클릭하세요";
+                } else {
+                    $alarm.innerHTML = "랜덤수가 이 안에 없습니다! 다시 뽑아보세요";
+                }
+            } else {
+                $alarm.innerHTML = "안에 랜덤수가 있습니다! 답을 클릭하세요";
+            }
+        });
+
+        $numbers[0].addEventListener("click", function() {
+            console.log(check);
+            if (check == 1) {
+                $alarm.innerHTML = "안에 랜덤수가 없습니다! 다시 뽑아보세요";
+            }
+            else if (check == 2) {
+                if (numbers[0] == randomNum) {
+                    $alarm.innerHTML = "정답을 맞추셨습니다! 축하드립니다";
+                    check = 0;
+                } else {
+                    $alarm.innerHTML = "아쉽게도 틀리셨습니다. 다시 시도해보세요";
+                    check = 0;
+                }
+            } else {
+                $alarm.innerHTML = "랜덤수부터 배정해주세요";
+            }
+        });
+
+        $numbers[1].addEventListener("click", function() {
+            if (check == 1) {
+                $alarm.innerHTML = "안에 랜덤수가 없습니다! 다시 뽑아보세요";
+            }
+            else if (check == 2) {
+                if (numbers[1] == randomNum) {
+                    $alarm.innerHTML = "정답을 맞추셨습니다! 축하드립니다";
+                    check = 0;
+                } else {
+                    $alarm.innerHTML = "아쉽게도 틀리셨습니다. 다시 시도해보세요";
+                    check = 0;
+                }
+            } else {
+                $alarm.innerHTML = "랜덤수부터 배정해주세요";
+            }
+        });
+
+        $numbers[2].addEventListener("click", function() {
+            if (check == 1) {
+                $alarm.innerHTML = "안에 랜덤수가 없습니다! 다시 뽑아보세요";
+            }
+            else if (check == 2) {
+                if (numbers[2] == randomNum) {
+                    $alarm.innerHTML = "정답을 맞추셨습니다! 축하드립니다";
+                    console.log(this.value);
+                    check = 0;
+                } else {
+                    $alarm.innerHTML = "아쉽게도 틀리셨습니다. 다시 시도해보세요";
+                    check = 0;
+                }
+            } else {
+                $alarm.innerHTML = "랜덤수부터 배정해주세요";
+            }
+        });
+    </script>
+</body>
+</html>

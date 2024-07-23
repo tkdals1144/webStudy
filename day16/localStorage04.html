@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let searchList = [];
+
+        function searchItem() {
+            let $searchWord = document.querySelector("#search_word").value;
+            searchList.push($searchWord);
+            console.log(searchList);
+
+            //로컬저장소에 저장하기
+            let searchListString = JSON.stringify(searchList);
+            localStorage.setItem("search", searchListString);
+        }
+        function loadData() {
+            let searchListString = localStorage.getItem("search");
+            let searchList = JSON.parse(searchListString);
+            for (let i = 0; i < searchList.length; i++) {
+                let listItem = document.createElement("li");
+                listItem.innerHTML = searchList[i];
+                document.querySelector(".list").appendChild(listItem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="search_word"><button onclick="searchItem()">검색</button> <button onclick="loadData()">조회</button>
+    <ul class="list"></ul>
+</body>
+</html>

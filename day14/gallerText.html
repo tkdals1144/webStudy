@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        // let msg = ['여름이 왔네요', '프론트 프로젝트 시작 몇일전', '밖은 덥지만 에이콘은 시원해요', '안녕하세요오오'];
+        let i = 0;
+        let msg = [];
+
+        function nextMsg() {
+            let gallery = document.querySelector(".gallery");
+            gallery.innerHTML = msg[i];
+            i++;
+            
+            if (i >= msg.length) i = 0;
+        }
+        //문서의 요소 중에서 갤러리 텍스트로 마
+        function init() {
+
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="gallery">
+            <div>여름이 왔네요</div>
+            <div>프론트 프로젝트 시작 몇일전</div>
+            <div>밖은 덥지만 에이콘은 시원해요</div>
+            <div>안녕하세요오오</div>
+        </div>
+    </div>
+    <button onclick="nextMsg()">다음!</button>
+</body>
+</html>

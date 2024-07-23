@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = ["apple", "banana", "mango"];
+
+        function myForEach(func) {
+            for (let i = 0; i < arr.length; i++) {
+                func(arr[i], i);
+            }
+        }
+        myForEach((item, i) => {
+            console.log(`요소 -> ${item}`);
+            console.log(`인덱스 -> ${i}`);
+        })
+
+        let newArr = arr.map(item => item+"fruit");
+        newArr.forEach(item => console.log(item));
+    </script>
+</body>
+</html>

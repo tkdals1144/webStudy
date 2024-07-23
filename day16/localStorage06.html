@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list"></ul>
+    <button onclick="saveFruits()">저장</button>
+    <button onclick="readFruits()">읽기</button>
+
+    <script>
+        let fruits = ['apple', 'banana', 'melon'];
+
+        function saveFruits() {
+            localStorage.setItem("fruits", JSON.stringify(fruits));
+        }
+        function readFruits() {
+            let saveList = localStorage.getItem("fruits");
+
+            if(saveList != null) {
+                fruits = JSON.parse(saveList);
+            }
+
+            let str ="";
+            fruits.forEach(item => {
+                str += `<li data-id='${item}'>${item} <button class="delete-btn"> X </button></li>`;
+            });
+            document.querySelector(".list").innerHTML = str;
+        }
+        document.querySelector(".list").addEventListener("click", function(e) {
+            if(e.target.classList.contains(".delete-btn")) {
+                e.target.parentElement.remove();
+            };
+        });
+
+    </script>
+</body>
+</html>

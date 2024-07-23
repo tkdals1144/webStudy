@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hello(func) { // 함수를 매개변수로 받을 수 있다.
+            alert("1초 후에 실행해 줄게");
+            // 매개변수로 받은 함수를 콜백함수라고 한다.
+            func();
+        }
+
+        // 함수를 전달해 주어야 한다
+        // 함수를 전달하는 두가지 방법
+        // 1. 익명함수, 2. 함수이름을 만들고 전달
+
+        // hello (function() {
+        //     alert("익명함수 실행");
+        // });
+
+        // setTimeout(함수, 밀리초) -> 밀리초만큼 실행을 밀려나게 한다
+        // setTimeout(function() {
+        //     alert("hi");
+        // }, 2000);
+
+        // function a() {
+        //     alert("hi2");
+        // }
+        // // setTimeout(a(), 3000) -> 이런식으로 하면 a함수의 리턴값을 매개변수로 주는꼴이 되므로 안된다!!
+        // setTimeout(a, 5000);
+        
+        function func1(func2) {
+            func2();
+            console.log("func1 실행");
+        }
+
+        function func2(func3) {
+            func3();
+            console.log("func2 실행");
+        }
+        
+        function func3() {
+            console.log("첫 함수 func3");
+            console.log("func3 실행");
+        }
+
+        func1(() => func2(func3));
+    </script>
+</body>
+</html>

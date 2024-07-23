@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Orbit&family=Stylish&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Orbit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #wrap {
+            border: 1px solid;
+            margin: 100px auto;
+            width: 500px;
+            text-align: center;
+            background-color: rgb(245, 237, 226);
+            padding: 20px 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        input {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3>지금까지 쓴 돈은?</h3>
+        <hr>
+        <input type="text" id="num" placeholder="금액을 입력하고 엔터를 누르세요">
+        <hr>
+        <h3>총 금액 : <span id="total">0</span></h3>
+    </div>
+    <script>
+        let sum = 0;
+        let $total = document.querySelector("#total");
+        document.getElementById("num").addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                sum += parseInt(event.target.value);
+                document.getElementById("total").innerHTML = sum;
+                event.target.value = null;
+            }
+        })
+    </script>
+</body>
+</html>

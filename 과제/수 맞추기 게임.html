@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임</title>
+    <style>
+        #wrap {
+            border: 1px solid;
+            margin: 100px auto;
+            width: 500px;
+            text-align: center;
+            background-color: antiquewhite;
+            padding-bottom: 50px;
+        }
+        /* #quiz {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid;
+            width: 400px;
+            height: 100px;
+            margin: 0 auto;
+        } */
+        /* #updown_wrap {
+            display: flex;
+            width: 800px;
+            height: 200px;
+            margin-top: 100px;
+            border: 1px solid;
+            margin: 0 auto;
+        }
+        #up, #down {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 400px;
+            height: 200px;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        #up .active {
+            color: red;
+            background-color: yellowgreen;
+            display: flex;
+        }
+        #down .active {
+            color: blue;
+            background-color: lightgreen;
+            display: flex;
+        } */
+        button {
+            width: 400px;
+            height: 100px;
+            margin-top: 20px;
+            background-color: rgb(207, 193, 163);
+            border: 1px solid rgb(134, 107, 56);
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: rgb(186, 186, 238);
+        }
+        input {
+            width: 300px;
+            height: 30px;
+            background-color: aliceblue;
+            margin-top: 10px;
+            border: 1px solid lightsalmon;
+        }
+        #submit {
+            cursor: pointer;
+        }
+        #submit:hover {
+            background-color: rgb(226, 234, 241);
+        }
+        #input_num {
+            background-color: aliceblue;
+            padding: 5px 0;
+        }
+        #result {
+            color: salmon;
+        }
+        #hidden {
+            display: none;
+        }
+        #hidden.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>수 맞추기 게임</h1>
+        <hr>
+        <!-- 게임 시작(초기화기능 포함) -->
+        <button id="gameStart">게임시작하기</button> <br>
+        <!-- 숫자 입력과 제출을 위한 input태그 -->
+        <input type="number" id="userInput" placeholder="여기에 수를 입력해주세요" step="1" required> <br>
+        <input type="submit" id="submit" value="입력" onclick="submit()"> <br>
+        <!-- 입력한 숫자를 표시 -->
+        <h1 id="input_num">0</h1>
+        <h1 id="result">게임을 시작해주세요!</h1>
+        <h3>현재 입력 횟수 : <span id="count">0</span></h3>
+        <h3 id="hidden">3번안에 맞추셨습니다!</h3>
+    </div>
+    <script>
+        let $result = document.querySelector("#result");
+        let $inputNum = document.querySelector("#input_num");
+        let $hidden = document.querySelector("#hidden");
+        let $count = document.querySelector("#count");
+        let count = 0;
+        let userNum = 0;
+        let check = 0;
+        let answer = 0;
+
+        document.querySelector("#gameStart").addEventListener("click", () => {
+            answer = Math.ceil(Math.random()*100);
+            reset();
+        });
+
+        function reset() {
+            $hidden.classList.remove("active");
+            $result.innerHTML = "게임시작!";
+            $inputNum.innerHTML = 0;
+            $count.innerHTML = 0;
+            check = 1;
+        }
+
+        function submit() {
+            if (check === 1) {
+                if ($inputNum.value === "") {
+                    userNum = 0;
+                } else {
+                    userNum = document.querySelector("#userInput").value;
+                }
+                $inputNum.innerHTML = userNum;
+                behavior();
+            }
+            else {
+                $result.innerHTML = "게임이 시작되지 않았습니다.";
+            }
+        }
+
+        function behavior() {
+            $count.innerHTML = ++count;
+            if (answer == userNum) {
+                $result.innerHTML = "숫자를 맞추셨습니다!";
+                if (count <= 3) {
+                    $hidden.classList.add("active");
+                }
+                check = 0;
+            }
+            else if (answer < userNum && userNum <= 100) {
+                $result.innerHTML = "DOWN!";
+            }
+            else if (answer > userNum && userNum > 0){
+                $result.innerHTML = "UP!";
+            } else {
+                $result.innerHTML = "범위를 벗어났습니다";
+            }
+        }
+    </script>
+</body>
+</html>

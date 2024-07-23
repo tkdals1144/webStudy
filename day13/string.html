@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let message = "hello";
+
+        let result = message + "javascript";
+
+        let result2 = message.concat("javascript");
+
+        // 문자열내에서 찾는 문자열의 시작인덱스 반환
+        let str = "i like javascript";
+        let index = str.indexOf("i");
+        console.log(index);
+
+        // 서브스트링 리턴
+        let result4 = str.substring(2, 6);
+        let result5 = str.substr(2, 4);
+
+        console.log(`substring(2, 6) : ${result4}`);
+        console.log(`substr(2, 4) : ${result5}`);
+
+        let result6 = str.replace("like", "love");
+        console.log(result6);
+
+        let tel = "010-1234-5678";
+        let rtn = tel.split("-");
+        console.log(rtn);
+    </script>
+</body>
+</html>

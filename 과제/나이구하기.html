@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Orbit&family=Stylish&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Orbit", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        #wrap {
+            border: 1px solid;
+            margin: 100px auto;
+            width: 500px;
+            text-align: center;
+            background-color: rgb(245, 237, 226);
+            padding: 20px 0;
+        }
+        input {
+            width: 200px;
+            height: 30px;
+            margin: 5px 0;
+        }
+        hr {
+            margin: 20px 0;
+        }
+        #submit {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h3>나이 구하기</h3>
+        <hr>
+        <input type="date" id="gain_age"> <br>
+        <input type="submit" id="submit"> <br>
+        <hr>
+        <h2 id="age">0살</h2>
+    </div>
+    <script>
+        $submit = document.querySelector("#submit");
+        $date = document.querySelector("#gain_age");
+        $age = document.querySelector("#age");
+        let today = new Date();
+        let todayYear = today.getFullYear();
+        let todayMonth = today.getMonth() + 1;
+        let todayDay = today.getDate();
+        let year = 0;
+        let month = 0;
+        let day = 0;
+        let age = 0;
+        $submit.addEventListener("click", () => {
+            if ($date) {
+                let dateParts = $date.value.split("-");
+                year = parseInt(dateParts[0], 10);
+                console.log(year);
+                month = parseInt(dateParts[1], 10);
+                day = parseInt(dateParts[2], 10);
+            } else {
+                alert("생년월일을 먼저 입력해주세요.");
+            }
+            if (todayMonth > month) {
+                age = todayYear - year;
+            } else if (todayMonth == month) {
+                if (todayDay >= day) {
+                    age = todayYear - year;
+                } else {
+                    age = todayYear - year - 1;
+                }
+            } else {
+                age = todayYear - year - 1;
+            }
+            document.querySelector("#age").innerHTML = `${age}살`;
+        });
+    </script>
+</body>
+</html>
