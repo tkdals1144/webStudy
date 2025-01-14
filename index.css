@@ -59,9 +59,13 @@ footer {
     height: 40px;
     padding: 17px 30px;
 }
+html, body, main {
+    width: 100%;
+}
 #banner_wrap {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 #banner {
     width: 2000px;
@@ -126,7 +130,7 @@ footer {
     flex-wrap: wrap;
 }
 .page_box_list {
-    padding-right: 83px;
+    padding-right: 60px;
 }
 .page_box_list:hover {
     background: none;
